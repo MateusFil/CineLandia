@@ -1,0 +1,48 @@
+﻿@model TRABALHODEFINITIVO.Models.Mensagem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Mensagem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Assunto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Assunto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conteudo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conteudo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataEnvio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataEnvio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MensagemId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<TRABALHODEFINITIVO.Models.Filme>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Filmes" asp-action="Index" method="get">
+    <p>
+        Título: <input type="text" name="textoBusca" />
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAdquirida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorCusto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Situacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diretor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FotoCapa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAdquirida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorCusto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Situacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diretor)
+            </td>
+             <td>
+                    <img src="@item.FotoCapa" height="320px" />
+             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FilmeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FilmeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FilmeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

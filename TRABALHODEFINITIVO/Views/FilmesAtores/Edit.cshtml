@@ -1,0 +1,44 @@
+﻿@model TRABALHODEFINITIVO.Models.FilmeAtores
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FilmeAtores</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FilmeAtoresId" />
+            <div class="form-group">
+                <label asp-for="FilmeId" class="control-label"></label>
+                <select asp-for="FilmeId" class="form-control" asp-items="ViewBag.FilmeId"></select>
+                <span asp-validation-for="FilmeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AtorId" class="control-label"></label>
+                <select asp-for="AtorId" class="form-control" asp-items="ViewBag.AtorId"></select>
+                <span asp-validation-for="AtorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personagem" class="control-label"></label>
+                <input asp-for="Personagem" class="form-control" />
+                <span asp-validation-for="Personagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

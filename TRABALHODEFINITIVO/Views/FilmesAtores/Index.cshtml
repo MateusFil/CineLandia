@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TRABALHODEFINITIVO.Models.FilmeAtores>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="FilmesAtores" asp-action="Index" method="get">
+    <p>
+        Título: <input type="text" name="textoBusca" />
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Filme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personagem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filme.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ator.Nome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Personagem)
+            </td>
+
+            <td>
+                <td>
+                    <img src="@item.Ator.Foto" height="320px" />
+                </td>
+            </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ator.DataNascimento)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ator.PaisNascimento)
+                </td>
+
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FilmeAtoresId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FilmeAtoresId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FilmeAtoresId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

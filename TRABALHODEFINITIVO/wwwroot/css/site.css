@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: rgb(74, 0, 0)
+}
+
+.container {
+    background-color: rgb(74, 0, 0)
+}
+
+.table {
+    color: aliceblue
+}
+
+a {
+    color: aliceblue
+}
+
+h1 {
+    color: aliceblue;
+}
+
+h4 {
+    color: aliceblue;
+}
+
+.display-4 {
+    /* Corrigido o box-shadow inset */
+    box-shadow: inset 10px 0 30px #ff006e;
+    /* Corrigido o margin-bottom */
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.display-4 {
+    margin-top: 0px;
+}
+
+.row {
+    color: aliceblue
+}
+
+.nav-link navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 {
+    color: aliceblue
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.card {
+    margin-left: 20px;
+    text-align: center
+}
+
+p {
+    color:aliceblue;
+}
+
+.container-fluid {
+    background-color: #ff006e;
+
+}
+
+.FotoHome{
+    width:20px;
+}
+
+.ImagemHome{
+    border-radius:30px;
+    width:30px;
+}
